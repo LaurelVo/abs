@@ -26,26 +26,6 @@ header {
   border-left: none;
 }
 
-/*---airbnb-logo---*/
-
-.logo {
-  width: 138px;
-  height: 61px;
-  padding: 15px 20px;
-  float: left;
-  border: 1px solid #dce0e0;
-  border-top: none;
-  border-bottom-color: transparent;
-}
-.logo:hover {
-  background-color: #f5f5f5;
-  cursor: pointer;
-}
-.logo svg {
-  width: 100px;
-  height: 31px;
-}
-
 /*---search-bar---*/
 
 .search-bar {
@@ -239,18 +219,16 @@ header {
   margin-top: 170px;
 }
 .prices h3 {
+  width: 100%;
   font-weight: 100;
   font-size: 25px;
   color: #484848;
   margin-left: 5px;
 }
-.img {
-  display: inline-block;
-  margin: 30px 5px 0 5px;
+.prices h4 {
+  font-size: 14px;
 }
-.img:last-child {
-  margin-right: 0;
-}
+
 .img img {
   width: 301px;
   height: 206px;
@@ -323,62 +301,12 @@ hr {
   font-size: 18px;
 }
 
-/*---gallery-guidebooks---*/
-
-.guidebooks {
-  display: block;
-}
-
-.guidebooks h3 {
-  font-weight: 100;
-  font-size: 25px;
-  color: #484848;
-  margin-left: 5px;
-}
-.img-box {
-  float: left;
-  width: 305px;
-  height: 205px;
-  margin: 40px 5px 0 5px;
-}
-.img-box:last-child {
-  margin-right: 0;
-}
-.img-box h4 {
-  font-size: 14px;
-  color: #484848;
-  float: left;
-  margin: 5px 5px 0 0;
-}
-.img-box h4 spam {
-  margin-left: -1px;
-}
-.img-box p {
-  font-size: 14px;
-  color: #484848;
-  margin-top: 5px;
-  float: left;
-}
-.img-big {
-  float: left;
-  margin-top: 3px;
-  width: 200px;
-  height: 163px;
-}
-.img-small {
-  float: right;
-  width: 100px;
-  height: 80px;
-  margin-top: 3px;
-}
-
 /*----------------
 ---Footer---
 ----------------*/
 
 footer {
   font-family: Circular, Helvetica, Arial, sans-serif;
-  margin-top: 300px;
   width: 100%;
   height: 470px;
   background-image: url("https://a0.muscache.com/airbnb/static/footer/background-317dd7c2cb678ddbdb0a983d511cb9a0.png");
