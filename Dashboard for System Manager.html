@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="systemmanager.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script type="text/javascript" src="manage-table.js"></script>
+    <title>Dashboard for System Manager</title>
+
+</head>
+
+<body>
+    <div class="topbar">
+        <a class="accommodation" a href="#accommodation">Accommodations</a>
+        <a href="#user">Users</a>
+        <a href="review">Reviews</a>
+        <i class="fas fa-user-circle fa-2x"></i>
+    </div>
+
+    <h1>System Manager</h1>
+    <h4 class="welcome">Welcome to System Manager</h4>
+    <h4 class="overview">Accomodation Overview</h4>
+
+    <div>
+        <table class="accotable">
+            <tbody>
+                <tr>
+                    <th>Property Name</th>
+                    <th>22 Mar</th>
+                    <th>23 Mar</th>
+                    <th>24 Mar</th>
+                    <th>25 Mar</th>
+                    <th>26 Mar</th>
+                    <th>27 Mar</th>
+                    <th>28 Mar</th>
+                    <th>29 Mar</th>
+                    <th>30 Mar</th>
+                </tr>
+                <tr>
+                    <td class="roomnumber">Orchard Cottage</td>
+                    <td class="live"></td>
+                    <td class="live"></td>
+                    <td class="live"></td>
+                    <td class="booked"></td>
+                    <td class="booked"></td>
+                    <td class="free"></td>
+                    <td class="free"></td>
+                    <td class="free"></td>
+                    <td class="booked"></td>
+                </tr>
+                <tr>
+                    <td class="roomnumber">Mighty Oaks</td>
+                    <td class="free"></td>
+                    <td class="free"></td>
+                    <td class="booked"></td>
+                    <td class="booked"></td>
+                    <td class="booked"></td>
+                    <td class="booked"></td>
+                    <td class="booked"></td>
+                    <td class="booked"></td>
+                    <td class="booked"></td>
+                </tr>
+                <tr>
+                    <td class="roomnumber">The Barn</td>
+                    <td class="live"></td>
+                    <td class="live"></td>
+                    <td class="live"></td>
+                    <td class="live"></td>
+                    <td class="live"></td>
+                    <td class="live"></td>
+                    <td class="live"></td>
+                    <td class="live"></td>
+                    <td class="live"></td>
+                </tr>
+                <tr>
+                    <td class="roomnumber">Mighty Oaks</td>
+                    <td class="live"></td>
+                    <td class="live"></td>
+                    <td class="live"></td>
+                    <td class="free"></td>
+                    <td class="free"></td>
+                    <td class="free"></td>
+                    <td class="free"></td>
+                    <td class="free"></td>
+                    <td class="free"></td>
+                </tr>
+                <tr>
+                    <td class="roomnumber">En Harmonie</td>
+                    <td class="live"></td>
+                    <td class="live"></td>
+                    <td class="live"></td>
+                    <td class="booked"></td>
+                    <td class="booked"></td>
+                    <td class="booked"></td>
+                    <td class="free"></td>
+                    <td class="free"></td>
+                    <td class="free"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h4>Please note</h4>
+    <h5>(Red means the room is occupied, orange means the room is reserved, green means the room is free for booking)</h5>
+    <h4 class="editacco">Edit Accommodations</h4>
+
+    <div class="edittable">
+        <table align='center' id="table-2" border=1>
+            <tr>
+                <th>Property Name</th>
+                <th>Status</th>
+                <th>Period</th>
+            </tr>
+
+            <tr id="row1">
+                <td id="room_row1">Orchard Cottage</td>
+                <td id="status_row1">Occupied</td>
+                <td id="period_row1">22 Mar-24 Mar</td>
+                <td>
+                    <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row('1')">
+                    <input type="button" id="save_button1" value="Save" class="save" onclick="save_row('1')">
+                    <input type="button" value="Delete" class="delete" onclick="remove_row('1')">
+                </td>
+            </tr>
+
+            <tr id="row2">
+                <td id="room_row2">Mighty Oaks</td>
+                <td id="status_row2">Free</td>
+                <td id="period_row2">22 Mar-23 Mar</td>
+                <td>
+                    <input type="button" id="edit_button2" value="Edit" class="edit" onclick="edit_row('2')">
+                    <input type="button" id="save_button2" value="Save" class="save" onclick="save_row('2')">
+                    <input type="button" value="Delete" class="delete" onclick="remove_row('2')">
+                </td>
+            </tr>
+
+            <tr id="row3">
+                <td id="room_row3">The Barn</td>
+                <td id="status_row3">Occupied</td>
+                <td id="period_row3">22 Mar-30 Mar</td>
+                <td>
+                    <input type="button" id="edit_button3" value="Edit" class="edit" onclick="edit_row('3')">
+                    <input type="button" id="save_button3" value="Save" class="save" onclick="save_row('3')">
+                    <input type="button" value="Delete" class="delete" onclick="remove_row('3')">
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="text" id="new_room"></td>
+                <td><input type="text" id="new_status"></td>
+                <td><input type="text" id="new_period"></td>
+                <td><input type="button" class="add" onclick="add_row();" value="Add Row"></td>
+            </tr>
+
+        </table>
+    </div>
+
+    <h4 class="edituser">Edit Users</h4>
+
+    <div class="usertable">
+        <table align='center' id="table-3" border=1>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>User Type</th>
+            </tr>
+
+            <tr id="row1">
+                <td id="name_row1">John Smith</td>
+                <td id="age_row1">26</td>
+                <td id="user_row1">Host</td>
+                <td>
+                    <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row('1')">
+                    <input type="button" id="save_button1" value="Save" class="save" onclick="save_row('1')">
+                    <input type="button" value="Delete" class="delete" onclick="remove_row('1')">
+                </td>
+            </tr>
+
+            <tr id="row2">
+                <td id="name_row2">William Lee</td>
+                <td id="age_row2">32</td>
+                <td id="user_row2">Customer</td>
+                <td>
+                    <input type="button" id="edit_button2" value="Edit" class="edit" onclick="edit_row('2')">
+                    <input type="button" id="save_button2" value="Save" class="save" onclick="save_row('2')">
+                    <input type="button" value="Delete" class="delete" onclick="remove_row('2')">
+                </td>
+            </tr>
+
+            <tr id="row3">
+                <td id="name_row3">Mike Jacob</td>
+                <td id="age_row3">58</td>
+                <td id="user_row3">Host</td>
+                <td>
+                    <input type="button" id="edit_button3" value="Edit" class="edit" onclick="edit_row('3')">
+                    <input type="button" id="save_button3" value="Save" class="save" onclick="save_row('3')">
+                    <input type="button" value="Delete" class="delete" onclick="remove_row('3')">
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="text" id="new_name"></td>
+                <td><input type="text" id="new_age"></td>
+                <td><input type="text" id="new_user"></td>
+                <td><input type="button" class="add" onclick="add_row();" value="Add Row"></td>
+            </tr>
+
+        </table>
+    </div>
+
+    <h4 class="reviewmana">Review Management</h4>
+
+    <div class="review">
+        <table align='center' id="table-4" border=1>
+            <tr>
+                <th>User Name</th>
+                <th>Review</th>
+                <th>Date</th>
+            </tr>
+            <tr>
+                <td>Dolly Charles</td>
+                <td>The rooms were clean, very comfortable, and the staff was amazing. They went over and beyond to help make our stay enjoyable.</td>
+                <td>4 Feb 2021</td>
+                <td id="remove">Remove</td>
+            </tr>
+            <tr>
+                <td>Ellice Plummer</td>
+                <td>The condition of the rooms were very bad. Bed sheets, linens were dirty. Horrible experience</td>
+                <td>26 Jan 2021</td>
+                <td id="remove">Remove</td>
+            </tr>
+            <tr>
+                <td>Harlee Mcmanus</td>
+                <td>The staff at this property are all great! They all go above and beyond to make your stay comfortable</td>
+                <td>24 Jan 2021</td>
+                <td id="remove">Remove</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+
+        var index, table = document.getElementById('table-4');
+        for (var i = 1; i < table.rows.length; i++) {
+            table.rows[i].cells[3].onclick = function ()
+            {
+                var c = confirm("Are you sure you want to remove the review");
+                if (c === true) {
+                    index = this.parentElement.rowIndex;
+                    table.deleteRow(index);
+            }
+
+                //console.log(index);
+            };
+
+        }
+
+    </script>
+
+</body>
+</html >

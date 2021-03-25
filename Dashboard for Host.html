@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="hostmanager.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script type="text/javascript" src="host-table.js"></script>
+    <title>Dashboard for Host</title>
+
+</head>
+<body>
+    <div class="topbar">
+        <a class="accommodation" a href="#accommodation">Accommodations</a>
+        <a href="review">Reviews</a>
+        <i class="fas fa-user-circle fa-2x"></i>
+    </div>
+
+    <h1>Host Manager</h1>
+    <h4 class="welcome">Welcome to Host Manager</h4>
+    <h4 class="overview">Accomodation Overview</h4>
+
+    <div class="edittable">
+        <table align='center' id="table" border=1>
+            <tr>
+                <th>Property Name</th>
+                <th>Availability</th>
+                <th>Period</th>
+            </tr>
+
+            <tr id="row1">
+                <td id="room_row1">Mighty Oaks</td>
+                <td id="status_row1">Free for Booking</td>
+                <td id="period_row1">22 Mar-24 Mar</td>
+                <td>
+                    <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row('1')">
+                    <input type="button" id="save_button1" value="Save" class="save" onclick="save_row('1')">
+                    <input type="button" value="Delete" class="delete" onclick="remove_row('1')">
+                </td>
+            </tr>
+
+            <tr id="row2">
+                <td id="room_row2">Woodhouse Barn</td>
+                <td id="status_row2">Booked</td>
+                <td id="period_row2">22 Mar-26 Mar</td>
+                <td>
+                    <input type="button" id="edit_button2" value="Edit" class="edit" onclick="edit_row('2')">
+                    <input type="button" id="save_button2" value="Save" class="save" onclick="save_row('2')">
+                    <input type="button" value="Delete" class="delete" onclick="remove_row('2')">
+                </td>
+            </tr>
+
+            <tr id="row3">
+                <td id="room_row3">En Harmonie</td>
+                <td id="status_row3">Free for booking</td>
+                <td id="period_row3">22 Mar-30 Mar</td>
+                <td>
+                    <input type="button" id="edit_button3" value="Edit" class="edit" onclick="edit_row('3')">
+                    <input type="button" id="save_button3" value="Save" class="save" onclick="save_row('3')">
+                    <input type="button" value="Delete" class="delete" onclick="remove_row('3')">
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="text" id="new_room"></td>
+                <td><input type="text" id="new_status"></td>
+                <td><input type="text" id="new_period"></td>
+                <td><input type="button" class="add" onclick="add_row();" value="Add Row"></td>
+            </tr>
+
+        </table>
+    </div>
+
+    <h4 class="reviewmana">Currenting Rating</h4>
+
+    <div class="review">
+        <table class="review-received" align="center" border="1">
+            <tr>
+                <th>Sum of ratings</th>
+                <th>Total number of reviews</th>
+            </tr>
+            <tr>
+                <td>46</td>
+                <td>10</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="rating">
+        Sum of ratings :<input type="text" id="num1">
+        <br>
+        Total number of reviews :<input type="text" id="num2">
+        <input type="button" onclick="divideBy()" value="Calculate">
+        <p>Your Current rating is :
+        <span id="result"></span>
+        </p>
+    </div>
+
+</body>
+</html>
