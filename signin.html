@@ -1,41 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Sign In</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/signin.css">
 </head>
 
 <body>
-    <form>
-        <div class="s">
-            <header>
-                <div class="navbar">
-                    <a href="booking.html" class="link">Home</a>
-                </div>
-            </header>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <span onclick="window.location='./booking.html';" class="navbar-brand mb-0 h1">Home</span>
+        </div>
+      </nav>
+    <div class="pt-5">
+        <h1 class="text-center">Login</h1>
 
-            <div class="s-header">
-                <h1 class="s-header-title">Sign In</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 mx-auto">
+                    <div class="card card-body">
+
+                        <form id="submitForm">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control text-lowercase" id="username" required
+                                    name="username" value="">
+                            </div>
+                            <div class="form-group">
+                                <label class="d-flex flex-row align-items-center" for="password">Password
+                                    <a class="ml-auto border-link small-xl" href="#">Forget password?</a>
+                                </label>
+                                <input type="password" class="form-control" required id="password" name="password"
+                                    value="">
+                            </div>
+                            <div class="form-group mt-4 mb-4">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="remember-me"
+                                        name="remember-me">
+                                    <label class="custom-control-label" for="remember-me">Remember me?</label>
+                                </div>
+                            </div>
+                            <div class="form-group pt-1">
+                                <button class="btn btn-primary btn-block" type="submit">Log In</button>
+                            </div>
+                        </form>
+                        <p class="small-xl pt-3 text-center">
+                            <span class="text-muted">Not a member?</span>
+                            <a href="./register.html">Sign up</a>
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="s-body">
-                <hr>
-                <div class="s-bbody-row">
-                    <label for="uname"><strong>Username</strong></label>
-                    <input type="text" placeholder="Enter Username" name="uname" required>
-                </div>
-                <div class="s-bbody-row">
-                    <label for="pwd"><strong>Password</strong></label>
-                    <input type="password" placeholder="Enter Password" name="pwd" required>
-                </div>
-                <div class="s-bbody-row">
-                    <p> <a href="#">Forgot password?</a>.</p>
-                </div>
-                <div class="s-body-row modal-btn">
-                    <button type="submit" class="btn btn-signin">Sign In</button>
-                </div>
         </div>
-        
-        </div>
-    </form>
+    </div>
 </body>
+
 </html>
