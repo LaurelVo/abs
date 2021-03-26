@@ -1,0 +1,73 @@
+
+.navbar {
+    padding: 16px, 30px;
+}
+
+.navbar > a {
+    margin-right: 16px;
+    text-decoration: none;
+    color: darksalmon;
+}
+.s {
+    margin-top: 40px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 300px;
+    padding-bottom: 20px;
+    margin: auto;
+}
+
+.s-header {
+    padding: 0, 16px;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column; 
+}
+
+.s-body {border: 2px, solid, black;
+    padding-left: 100px;
+    padding-top: 10px;
+    background-color: white;
+}
+
+hr {
+    border: 1px, solid, lightslategray;
+    margin-bottom: 25px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.s-body-row {
+    display: flex;
+    align-items: center;
+    margin: 4px, 0px;
+}
+
+
+input[type=text], input[type=password] {
+    padding: 15px;
+    display: inline-block;
+    background-color: mediumaquamarine;
+}
+
+.modal-btn {
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 8px;
+    color: black;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    align-items: center;
+}
+
+
+.btn-signin {
+    background-color: cornflowerblue;
+}
