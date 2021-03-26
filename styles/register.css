@@ -1,89 +1,8 @@
 
-
-.navbar {
-    padding: 16px, 30px;
+body {
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg');
 }
 
-.navbar > a {
-    margin-right: 16px;
-    text-decoration: none;
-    color: darksalmon;
-}
-
-
-
-.container {
-    margin-top: 40px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    height: 200px;
-    width: 800px;
-    padding-bottom: 20px;
-    margin: auto;
-}
-
-.container-header {
-    padding: 0, 16px;
-    align-items: center;
-    display: flex;
-    flex: 1;
-    flex-direction: column; 
-}
-
-.container-body {border: 2px, solid, black;
-    padding-left: 100px;
-    padding-top: 10px;
-    background-color: white;
-}
-
-hr {
-    border: 1px, solid, lightslategray;
-    margin-bottom: 25px;
-    margin-top: 15px;
-    width: 100%;
-}
-
-.container-body-row {
-    display: flex;
-    align-items: center;
-    margin: 4px, 0px;
-}
-
-
-input[type=text], input[type=password] {
-    padding: 15px;
-    display: inline-block;
-    background-color: mediumaquamarine;
-}
-
-.modal-btn {
-    justify-content: space-between;
-}
-
-.container-body-row > label {
-    width: 25%;
-}
-.container-body-row > input {
-    width: 60%;
-}
-.btn {
-    padding: 8px;
-    color: black;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-}
-
-.btn-register {
-    background-color: cornflowerblue;
-}
-
-.btn-signin {
-    background-color: cornflowerblue;
-}
-
-/* The message box is shown when the user clicks on the password field */
 #message {
     display:none;
     background: #f1f1f1;
@@ -91,32 +10,26 @@ input[type=text], input[type=password] {
     position: relative;
     padding: 20px;
     margin-top: 10px;
-    width: 300px;
-    height: auto;
-  }
+}
   
-  #message p {
-    padding: 10px 35px;
-  }
-  
-  /* Add a green text color and a checkmark when the requirements are right */
-  .valid {
+#message p {
+    padding: 10px 10px;
+    font-size: 18px;
+}
+
+.valid {
     color: green;
-  }
-  
-  .valid:before {
-    position: relative;
-    left: -35px;
-    content: "✔";
-  }
-  
-  /* Add a red text color and an "x" when the requirements are wrong */
-  .invalid {
+}
+
+.invalid {
     color: red;
-  }
-  
-  .invalid:before {
-    position: relative;
-    left: -35px;
-    content: "✖";
-  }
+}
+
+.btn {
+    background-color: #ff5a5f;
+    border-color: #ff5a5f;
+}
+
+.btn:hover {
+    background-color: #ff5a5f;
+}
