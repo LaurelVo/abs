@@ -37,7 +37,7 @@ if(isset($_GET['error']))
 <body>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <span onclick="window.location='./index.html';" class="navbar-brand mb-0 h1">Home</span>
+            <span onclick="window.location='./index.php';" class="navbar-brand mb-0 h1">Home</span>
         </div>
     </nav>
     <div class="pt-5">
@@ -74,7 +74,7 @@ if(isset($_GET['error']))
                         </form>
                         <p class="small-xl pt-3 text-center">
                             <span class="text-muted">Not a member?</span>
-                            <a href="./register.html">Sign up</a>
+                            <a href="./register.php">Sign up</a>
                         </p>
                     </div>
                 </div>
