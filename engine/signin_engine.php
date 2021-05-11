@@ -30,7 +30,7 @@ if($row['email']!=$email || $email=="")
 //if the email is same as the email data from the form 
 else {
 	//if the password from table is same as the password data from the form
-	if (password_verify($password, $row['password'])) {
+	if (strcmp($password, $row['password'] == 0)) {
 		//save the email in the session
 		$session_user=$row['email'];
 		$_SESSION['session_user']=$session_user;

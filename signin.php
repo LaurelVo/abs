@@ -1,10 +1,10 @@
 <?php
 //include the file session.php
-include("/utils/session.php");
-
-// if($session_user!="") {
-// 	header('location: ./index.php');
-// }
+include("./utils/session.php");
+var_dump($session_user);
+if(isset($session_user)) {
+	header('location: ./index.php');
+}
 
 //if there is any received error message 
 if(isset($_GET['error']))
