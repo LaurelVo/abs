@@ -1,6 +1,6 @@
 <?php
 include("./utils/session.php");
-  var_dump($session_role);
+  // var_dump($session_role);
 
 ?>
 

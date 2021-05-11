@@ -73,13 +73,14 @@ $(document).ready(function () {
     }
 
     $.post("./engine/signup_engine.php", {
-      firstName: $("#firstname").val(),
-      lastName: $("#lastname").val(),
+      firstName: $("#firstName").val(),
+      lastName: $("#lastName").val(),
       password: $("#psw").val(),
       email: $("#email").val(),
       address: $("#address").val(),
       phone: $("#mobile").val(),
       access: 1,
+      abn: "0",
     }).done(function (data) {
       if (data === "success") {
         window.location.href = "./index.php";
