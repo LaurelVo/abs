@@ -104,9 +104,12 @@ if(isset($_GET['error']))
                         password: password,
                     }
                 ).done(function (data) {
-                    console.warn(data);
-                    if (data === 'success') {
+                    if (data == 1) {
                         window.location.href = './index.php';
+                    } else if (data == 2) {
+                        window.location.href = './host-dashboard.html';
+                    } else if (data == 3) {
+                        window.location.href = './manager-dashboard.html';
                     } else {
                         alert(data);
                     }

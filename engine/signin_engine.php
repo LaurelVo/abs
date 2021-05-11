@@ -37,7 +37,7 @@ else {
 		$_SESSION['session_user']=$session_user;
 		$_SESSION['session_role']= $session_role;
 
-		echo json_encode( 'success' );
+		echo json_encode( $session_role );
 	
 	}//if the password from table does not match with the password data from the signin form
 	else{
