@@ -6,5 +6,9 @@ session_start();
 if(!isset($_SESSION['session_user'])){
 	$_SESSION['session_user']="";
 }
-$session_user=$_SESSION['session_user'];
+if(!isset($_SESSION['session_role'])){
+	$_SESSION['session_role']="";
+}
+$session_user = $_SESSION['session_user'];
+$session_role = $_SESSION['session_role']
 ?>

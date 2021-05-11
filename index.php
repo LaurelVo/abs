@@ -1,3 +1,8 @@
+<?php
+include("./utils/session.php");
+  var_dump($session_role);
+
+?>
 <head>
   <link
     rel="stylesheet"
@@ -47,7 +52,14 @@
   <ul class="main-nav">
     <li><button>Become a Host</button></li>
     <li onclick="window.location='./register.html'">Sign Up</li>
-    <li onclick="window.location='./signin.php'">Log In</li>
+    <?php 
+      if($session_user != "") {
+        echo '<li id="logout">Log out</li>';
+      } else {
+        echo '<li id="login">Log in</li>';
+      }
+    ?>
+    
   </ul>
 </header>
 
@@ -260,4 +272,14 @@
 
     <div class="copyright">&copy; ABS, Inc.</div>
   </div>
+  <script>
+        $(document).ready(function () {
+            $("#login").click(function () {
+              window.location = './signin.php';
+            })
+            $("#logout").click(function () {
+              window.location = './signout.php';
+            })
+        });
+    </script>
 </footer>

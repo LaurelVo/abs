@@ -1,8 +1,7 @@
 <?php
 //include the file session.php
 include("./utils/session.php");
-var_dump($session_user);
-if(isset($session_user)) {
+if($session_user != "") {
 	header('location: ./index.php');
 }
 

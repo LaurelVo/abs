@@ -33,19 +33,10 @@ else {
 	if (strcmp($password, $row['password'] == 0)) {
 		//save the email in the session
 		$session_user=$row['email'];
+		$session_role=$row['access_level'];
 		$_SESSION['session_user']=$session_user;
+		$_SESSION['session_role']= $session_role;
 
-		// if($row['student_id']!="" && $row['student_id'] != 0) {
-		// 	$_SESSION['session_role']= 0;
-		// } else {
-		// 	$staff_id=$row['staff_id'];
-		// 	$query = "SELECT * FROM aStaff WHERE id='$staff_id'";
-		// 	$result = $mysqli->query($query);
-		// 	$row=$result->fetch_array(MYSQLI_ASSOC);
-		// 	$r_ids = explode(",", $row['role_ids']);
-		// 	$_SESSION['session_role'] = min($r_ids); //get lowest number => highest role
-		// }
-		
 		echo json_encode( 'success' );
 	
 	}//if the password from table does not match with the password data from the signin form
