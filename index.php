@@ -34,7 +34,7 @@ include("./utils/session.php");
   </section>
 
   <ul class="main-nav">
-    <li><button>Become a Host</button></li>
+    <li onclick="window.location='./register-host.php'"><button>Become a Host</button></li>
     <li onclick="window.location='./register.php'">Sign Up</li>
     <?php 
       if($session_user != "") {

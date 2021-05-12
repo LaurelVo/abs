@@ -49,7 +49,7 @@ if($session_user!="") {
         </div>
         <div class="col-md-5">
           <div class="card">
-            <h2 class="card-title text-center">Register</h2>
+            <h2 class="card-title text-center">Become a host</h2>
             <div class="card-body py-md-4">
               <form onsubmit="return false;">
                 <div class="form-group">
@@ -66,6 +66,9 @@ if($session_user!="") {
                 </div>
                 <div class="form-group">
                   <input required type="text" class="form-control" id="address" placeholder="Address" />
+                </div>
+                <div class="form-group">
+                  <input required type="text" class="form-control" id="abn" placeholder="ABN" />
                 </div>
                 <div class="form-group">
                   <input id="psw" name="psw" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
@@ -92,7 +95,7 @@ if($session_user!="") {
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="./js/register.js"></script>
+  <script type="text/javascript" src="./js/register-host.js"></script>
 </body>
 
 </html>

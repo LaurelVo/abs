@@ -72,13 +72,14 @@ $(document).ready(function () {
       return alert("Password do not match.");
     }
 
-    $.post("./engine/signup_engine.php", {
+    $.post("./engine/signup_host_engine.php", {
       firstName: $("#firstName").val(),
       lastName: $("#lastName").val(),
       password: $("#psw").val(),
       email: $("#email").val(),
       address: $("#address").val(),
       phone: $("#mobile").val(),
+      abn: $("#abn").val(),
     }).done(function (data) {
       if (data === "success") {
         window.location.href = "./index.php";

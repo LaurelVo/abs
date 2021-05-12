@@ -13,8 +13,8 @@ $lastName=$_POST['lastName'];
 $password=$_POST['password'];
 $address=$_POST['address'];
 $phone=$_POST['phone'];
-$access=1;
-$abn=0;
+$access=2;
+$abn=$_POST['abn'];
 
 //query to check whether email is in the table (check whether the user has been signed up)
 $query = "SELECT * FROM users WHERE email='$email'";
