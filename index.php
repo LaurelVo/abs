@@ -34,12 +34,14 @@ include("./utils/session.php");
   </section>
 
   <ul class="main-nav">
-    <li onclick="window.location='./register-host.php'"><button>Become a Host</button></li>
-    <li onclick="window.location='./register.php'">Sign Up</li>
+    <!-- <li onclick="window.location='./register-host.php'"><button>Become a Host</button></li> -->
+    <!-- <li onclick="window.location='./register.php'">Sign Up</li> -->
     <?php 
       if($session_user != "") {
         echo '<li id="logout">Log out</li>';
       } else {
+        echo '<li id="register-host"><button>Become a Host</button></li>';
+        echo '<li id="signup">Sign Up</li>';
         echo '<li id="login">Log in</li>';
       }
     ?>
@@ -231,6 +233,12 @@ include("./utils/session.php");
       })
       $("#logout").click(function () {
         window.location = './signout.php';
+      })
+      $("#register-host").click(function () {
+        window.location = './register-host.php';
+      })
+      $("#signup").click(function () {
+        window.location = './register.php';
       })
     });
   </script>
