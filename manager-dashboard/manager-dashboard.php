@@ -17,9 +17,9 @@
 
 <body>
     <div class="topbar">
-        <a class="accommodation" a href="#accommodation">Accommodations</a>
-        <a href="#user">Users</a>
-        <a href="review">Reviews</a>
+        <a class="accommodation" a href="../index.php">Home</a>
+        <!-- <a href="#user">Users</a>
+        <a href="review">Reviews</a> -->
         <i class="fas fa-user-circle fa-2x"></i>
     </div>
 

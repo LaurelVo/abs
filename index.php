@@ -1,6 +1,7 @@
 <?php
 include("./utils/session.php");
-  // var_dump($session_role);
+//include the file db_conn.php
+include("./utils/db_conn.php");
 
 ?>
 
@@ -29,7 +30,7 @@ include("./utils/session.php");
     </svg>
 
     <form class="search-form">
-      <input type="text" placeholder="Where to?" />
+      <input type="text" placeholder="Where to? Enter a city" />
     </form>
   </section>
 
@@ -37,6 +38,9 @@ include("./utils/session.php");
     <!-- <li onclick="window.location='./register-host.php'"><button>Become a Host</button></li> -->
     <!-- <li onclick="window.location='./register.php'">Sign Up</li> -->
     <?php 
+      if ($session_role == 3) {
+        echo '<li id="manager">Manager</li>';
+      }
       if($session_user != "") {
         echo '<li id="logout">Log out</li>';
       } else {
@@ -44,6 +48,7 @@ include("./utils/session.php");
         echo '<li id="signup">Sign Up</li>';
         echo '<li id="login">Log in</li>';
       }
+      
     ?>
 
   </ul>
@@ -55,7 +60,7 @@ include("./utils/session.php");
   </h2>
 
   <section class="search-row">
-    <input class="search-input" type="text" placeholder="Where to?" />
+    <input class="search-input" type="text" placeholder="Where to? Enter a city" />
 
     <div class="checks-input">
       <label>Check in</label>
@@ -98,29 +103,24 @@ include("./utils/session.php");
     <div class="prices row g-2">
       <h3>Explore top picks</h3>
 
-      <div class="img col-4">
-        <img src="https://a2.muscache.com/im/pictures/6152848/b04eddeb_original.jpg?aki_policy=x_medium" />
-        <div class="price-stamp">$AUD 158</div>
-        <div class="description">
-          <h4>Loft Studio in the Central Area</h4>
-        </div>
-      </div>
+      <?php
+        $output = '';
+        $sql = "SELECT * FROM accommodations ORDER BY id ASC";
+        $result = mysqli_query($connect, $sql);  
 
-      <div class="img col-4">
-        <img src="https://a2.muscache.com/im/pictures/34792065/bae84a3f_original.jpg?aki_policy=x_medium" />
-        <div class="price-stamp">$AUD 1399</div>
-        <div class="description">
-          <h4>Everview Suite</h4>
-        </div>
-      </div>
+        while($row = mysqli_fetch_array($result)) { 
+          
+          $output .= '<div class="img col-4">';
+            $output .= '<img src="' . $row['image_url'] . '" />';
+            $output .= '<div class="price-stamp">$AUD' . $row['price_per_night'] . '</div>';
+            $output .= '<div class="description">';
+              $output .= '<h4>' . $row['description'] . '</h4>';
+            $output .= '</div>';
+          $output .= '</div>';
+        }
+        echo $output;
+      ?>
 
-      <div class="img col-4">
-        <img src="https://a2.muscache.com/im/pictures/1faf9a4c-f839-44da-bd37-65ddc928379e.jpg?aki_policy=x_medium" />
-        <div class="price-stamp">$AUD 576</div>
-        <div class="description">
-          <h4>180° View, private pool villa</h4>
-        </div>
-      </div>
     </div>
 
     <hr />
@@ -239,6 +239,9 @@ include("./utils/session.php");
       })
       $("#signup").click(function () {
         window.location = './register.php';
+      })
+      $("#manager").click(function () {
+        window.location = './manager-dashboard/manager-dashboard.php';
       })
     });
   </script>

@@ -1,25 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: May 11, 2021 at 10:42 AM
--- Server version: 8.0.24
--- PHP Version: 7.4.3
+-- Host: localhost:8889
+-- Generation Time: May 13, 2021 at 08:41 PM
+-- Server version: 5.7.26
+-- PHP Version: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `assignment2_502`
 --
+CREATE DATABASE IF NOT EXISTS `assignment2_502` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `assignment2_502`;
 
 -- --------------------------------------------------------
 
@@ -28,28 +23,36 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `accommodations` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `type` varchar(232) NOT NULL,
   `description` varchar(500) DEFAULT NULL,
-  `max_guests` int NOT NULL,
-  `total_rooms` int NOT NULL,
-  `total_bathrooms` int NOT NULL,
+  `max_guests` int(11) NOT NULL,
+  `total_rooms` int(11) NOT NULL,
+  `total_bathrooms` int(11) NOT NULL,
   `address` varchar(232) NOT NULL,
-  `published_at` datetime(6) NOT NULL,
+  `published_at` varchar(232) NOT NULL,
   `price_per_night` decimal(40,0) NOT NULL,
-  `created_at` datetime(6) NOT NULL,
-  `updated_at` datetime DEFAULT NULL,
+  `created_at` varchar(232) NOT NULL,
+  `updated_at` varchar(232) DEFAULT NULL,
   `house_name` varchar(232) NOT NULL,
   `city` varchar(232) NOT NULL,
   `has_garage` tinyint(1) NOT NULL,
   `has_internet` tinyint(1) NOT NULL,
   `allow_pet` tinyint(1) NOT NULL,
   `allow_smoke` tinyint(1) NOT NULL,
-  `owner_id` int NOT NULL,
+  `owner_id` int(11) NOT NULL,
   `image_url` varchar(500) NOT NULL,
-  `available_from` datetime(6) NOT NULL,
-  `available_to` datetime(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `available_from` varchar(232) NOT NULL,
+  `available_to` varchar(232) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `accommodations`
+--
+
+INSERT INTO `accommodations` (`id`, `type`, `description`, `max_guests`, `total_rooms`, `total_bathrooms`, `address`, `published_at`, `price_per_night`, `created_at`, `updated_at`, `house_name`, `city`, `has_garage`, `has_internet`, `allow_pet`, `allow_smoke`, `owner_id`, `image_url`, `available_from`, `available_to`) VALUES
+(1, 'House', NULL, 3, 2, 1, '1/5 West Hobart', '2021-05-12', '150', '2021-05-11', NULL, 'Loft Studio in the Central Area', 'Hobart', 0, 1, 1, 0, 3, 'https://a2.muscache.com/im/pictures/6152848/b04eddeb_original.jpg?aki_policy=x_medium', '2021-05-13', '2021-05-23'),
+(2, 'House', 'Good', 2, 2, 1, '2 Collins St', '2021-05-12', '200', '2021-05-11', '', 'Sky View', 'Melbourne', 0, 1, 0, 0, 3, 'https://a2.muscache.com/im/pictures/6152848/b04eddeb_original.jpg?aki_policy=x_medium', '2021-05-13', '2021-05-15');
 
 -- --------------------------------------------------------
 
@@ -58,17 +61,17 @@ CREATE TABLE `accommodations` (
 --
 
 CREATE TABLE `bookings` (
-  `id` int NOT NULL,
-  `user_id` int NOT NULL,
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `price` decimal(40,0) NOT NULL,
-  `start_date` datetime(6) NOT NULL,
-  `end_date` datetime(6) NOT NULL,
-  `created_at` datetime(6) NOT NULL,
-  `no_guests` int NOT NULL,
+  `start_date` varchar(232) NOT NULL,
+  `end_date` varchar(232) NOT NULL,
+  `created_at` varchar(232) NOT NULL,
+  `no_guests` int(11) NOT NULL,
   `is_accepted` tinyint(1) DEFAULT NULL,
   `rejected_reason` varchar(232) DEFAULT NULL,
-  `checkout_date` datetime(6) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `checkout_date` varchar(232) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -77,12 +80,12 @@ CREATE TABLE `bookings` (
 --
 
 CREATE TABLE `messages` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `content` varchar(500) NOT NULL,
-  `created_at` datetime(6) NOT NULL,
-  `sender_id` int NOT NULL,
-  `receiver_id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `created_at` varchar(232) NOT NULL,
+  `sender_id` int(11) NOT NULL,
+  `receiver_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -91,11 +94,11 @@ CREATE TABLE `messages` (
 --
 
 CREATE TABLE `reviews` (
-  `id` int NOT NULL,
-  `booking_id` int NOT NULL,
+  `id` int(11) NOT NULL,
+  `booking_id` int(11) NOT NULL,
   `rating` decimal(40,0) DEFAULT NULL,
   `comment` varchar(232) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -104,16 +107,16 @@ CREATE TABLE `reviews` (
 --
 
 CREATE TABLE `users` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `first_name` varchar(232) NOT NULL,
   `last_name` varchar(232) NOT NULL,
   `mobile` varchar(40) NOT NULL,
   `email` varchar(232) NOT NULL,
   `password` varchar(232) NOT NULL,
-  `access_level` int NOT NULL,
+  `access_level` int(11) NOT NULL,
   `postal_address` varchar(232) NOT NULL,
-  `ABN` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `ABN` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -168,33 +171,28 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `accommodations`
 --
 ALTER TABLE `accommodations`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;

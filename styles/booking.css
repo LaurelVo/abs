@@ -227,7 +227,7 @@ header {
 
 .prices {
   width: 953px;
-  height: 330px;
+  min-height: 330px;
   margin-top: 170px;
 }
 .prices h3 {
