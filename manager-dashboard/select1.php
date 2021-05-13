@@ -1,5 +1,10 @@
 <?php  
- $connect = mysqli_connect("localhost", "root", "", "assignment2");  
+//  $connect = mysqli_connect("localhost", "root", "", "assignment2");
+//include the file session.php
+include("./../utils/session.php");
+//include the file db_conn.php
+include("./../utils/db_conn.php");
+
  $output = '';  
  $sql = "SELECT * FROM accommodations ORDER BY id ASC";  
  $result = mysqli_query($connect, $sql);  

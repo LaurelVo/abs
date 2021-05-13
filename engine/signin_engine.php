@@ -16,7 +16,7 @@ $password=$_POST['password'];
 //query to check whether email is in the table (check whether the user has been signed up)
 $query = "SELECT * FROM users WHERE email='$email'";
 //execute query to the database and retrieve the result ($result)
-$result = $mysqli->query($query);
+$result = $connect->query($query);
 
 //convert the result to array (the key of the array will be the column names of the table)
 	$row=$result->fetch_array(MYSQLI_ASSOC);

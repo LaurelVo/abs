@@ -20,14 +20,14 @@ $abn=0;
 $query = "SELECT * FROM users WHERE email='$email'";
 
 //execute query to the database and retrieve the result ($result)
-$result = $mysqli->query($query);
+$result = $connect->query($query);
 
 //convert the result to array (the key of the array will be the column names of the table)
 $row=$result->fetch_array(MYSQLI_ASSOC);
 
 if($row['email']!=$email || $row['email']=="") {
 		// create a user
-		$mysqli->query("INSERT INTO users (first_name, last_name, mobile, email, password, access_level, postal_address, ABN) VALUES ('$firstName','$lastName','$phone', '$email', '$password', '$access', '$address', '$abn')");
+		$connect->query("INSERT INTO users (first_name, last_name, mobile, email, password, access_level, postal_address, ABN) VALUES ('$firstName','$lastName','$phone', '$email', '$password', '$access', '$address', '$abn')");
 
 	$_SESSION['session_user']=$email;
 	$_SESSION['session_role']= $access;
@@ -38,5 +38,5 @@ if($row['email']!=$email || $row['email']=="") {
 	echo json_encode( 'Email Exists' );
 }
 
-$mysqli->close();
+$connect->close();
 ?>
