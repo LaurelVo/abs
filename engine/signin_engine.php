@@ -33,8 +33,10 @@ else {
 	if (strcmp($password, $row['password'] == 0)) {
 		//save the email in the session
 		$session_user=$row['email'];
+		$session_userId=$row['id'];
 		$session_role=$row['access_level'];
 		$_SESSION['session_user']=$session_user;
+		$_SESSION['session_userId']=$session_userId;
 		$_SESSION['session_role']= $session_role;
 
 		echo json_encode( $session_role );

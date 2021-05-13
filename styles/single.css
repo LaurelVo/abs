@@ -1,0 +1,41 @@
+.site-content {
+  height: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.single-accommodation img {
+  width: 100%;
+  height: 500px;
+}
+
+.single-accommodation .description {
+  margin-top: 50px;
+}
+
+.info {
+  display: flex;
+}
+
+.info svg {
+   margin-left: 15px; 
+}
+
+.address {
+  margin-top: 20px;
+  margin-left: 15px;
+  color: #3c475b;
+}
+
+.search-row {
+  padding-left: 15px;
+  margin-top: 50px;
+}
+
+.hidden {
+  display: none;
+}

@@ -110,13 +110,13 @@ include("./utils/db_conn.php");
 
         while($row = mysqli_fetch_array($result)) { 
           
-          $output .= '<div class="img col-4">';
+          $output .= '<a href="single.php?id=' . $row['id'] . '" class="img col-4 accommodation">';
             $output .= '<img src="' . $row['image_url'] . '" />';
             $output .= '<div class="price-stamp">$AUD' . $row['price_per_night'] . '</div>';
             $output .= '<div class="description">';
               $output .= '<h4>' . $row['description'] . '</h4>';
             $output .= '</div>';
-          $output .= '</div>';
+          $output .= '</a>';
         }
         echo $output;
       ?>

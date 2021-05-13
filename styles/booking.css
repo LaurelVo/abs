@@ -225,6 +225,10 @@ header {
 
 /*---gallery-prices---*/
 
+a.accommodation {
+  text-decoration: none;
+}
+
 .prices {
   width: 953px;
   min-height: 330px;
