@@ -107,7 +107,7 @@ if(isset($_GET['error']))
                     if (data == 1) {
                         window.location.href = './index.php';
                     } else if (data == 2) {
-                        window.location.href = './host-dashboard.html';
+                        window.location.href = './host-dashboard/host-dashboard.php';
                     } else if (data == 3) {
                         window.location.href = './manager-dashboard/manager-dashboard.php';
                     } else {
