@@ -25,9 +25,10 @@
 </head>
 <header>
   <ul class="main-nav">
+    <li onclick="window.location='./index.php';">Home</li>
     <li><button>Become a Host</button></li>
-    <li onclick="window.location='./register.html'">Sign Up</li>
-    <li onclick="window.location='./signin.html'">Log In</li>
+    <li onclick="window.location='./register.php'">Sign Up</li>
+    <li onclick="window.location='./signin.php'">Log In</li>
   </ul>
 </header>
 

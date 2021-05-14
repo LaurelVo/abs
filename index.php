@@ -130,37 +130,37 @@ include("./utils/db_conn.php");
 
       <ul class="places">
         <li class="img-large">
-          <img src="https://a0.muscache.com/airbnb/static/destinations/o-Paris_480x320.jpg" />
+          <img src="https://source.unsplash.com/featured/1200x900/?paris" />
           <h4 class="place-names">Paris</h4>
         </li>
 
         <li class="img-short">
-          <img src="https://a0.muscache.com/airbnb/static/destinations/o-Rome_Piazza017_480x320.jpg" />
+          <img src="https://source.unsplash.com/featured/1200x900/?restaurant" />
           <h4 class="place-names">Rome</h4>
         </li>
 
         <li class="img-short">
-          <img src="https://a0.muscache.com/airbnb/static/destinations/o-Los_Angeles_480x320.jpg" />
+          <img src="https://source.unsplash.com/featured/1200x900/?hotel-room,hotel" />
           <h4 class="place-names">Los Angeles</h4>
         </li>
 
         <li class="img-short">
-          <img src="https://a0.muscache.com/airbnb/static/destinations/o-Lisbon_480x320.jpg" />
+          <img src="https://source.unsplash.com/featured/1200x900/?city" />
           <h4 class="place-names">Lisbon</h4>
         </li>
 
         <li class="img-short">
-          <img src="https://a0.muscache.com/airbnb/static/destinations/o-Kyoto_480x320.jpg" />
+          <img src="https://source.unsplash.com/featured/1200x900/?chill" />
           <h4 class="place-names">Tokyo</h4>
         </li>
 
         <li class="img-short">
-          <img src="https://a0.muscache.com/airbnb/static/destinations/o-London_480x320.jpg" />
+          <img src="https://source.unsplash.com/featured/1200x900/?architecture,hotel" />
           <h4 class="place-names">London</h4>
         </li>
 
         <li class="img-large">
-          <img src="https://a0.muscache.com/airbnb/static/destinations/o-New_York_480x320.jpg" />
+          <img src="https://source.unsplash.com/featured/1200x900/?new-york" />
           <h4 class="place-names">New York</h4>
         </li>
 
@@ -170,7 +170,7 @@ include("./utils/db_conn.php");
         </li>
 
         <li class="img-short">
-          <img src="https://a0.muscache.com/airbnb/static/destinations/o-Amsterdam_480x320.jpg" />
+          <img src="https://source.unsplash.com/featured/1200x900/?sculpture,hotel" />
           <h4 class="place-names">Amsterdam</h4>
         </li>
 
@@ -228,6 +228,9 @@ include("./utils/db_conn.php");
   </div>
   <script>
     $(document).ready(function () {
+      $(".search-btn").click(function () {
+        window.location = './results.php';
+      })
       $("#login").click(function () {
         window.location = './signin.php';
       })

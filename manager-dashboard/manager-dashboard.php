@@ -158,7 +158,7 @@ $(document).ready(function(){
     });  
     $(document).on('blur', '.max_guests', function(){  
         var id = $(this).data("id3");  
-        var status = $(this).text();  
+        var max_guests = $(this).text();  
         edit_data(id, max_guests, "max_guests");  
     });  
     $(document).on('blur', '.total_rooms', function(){  
