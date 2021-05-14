@@ -225,8 +225,8 @@ include("./utils/db_conn.php");
           return false;  
         }
 
-        if (user_role !== 1) {
-          alert("Please login as customer");  
+        if (user_role != 1) {
+          alert(`Please login as customer`);  
           return false;  
         }
 

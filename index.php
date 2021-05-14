@@ -64,7 +64,7 @@ include("./utils/db_conn.php");
 
     <div class="checks-input">
       <label>Check in</label>
-      <input class="check-in" type="date" placeholder="Check In" />
+      <input id="start_date" name="from_date" class="check-in" type="date" placeholder="Check In" />
 
       <svg class="right-arrow" xmlns="http://www.w3.org/2000/svg" fill="#000000" height="24" viewBox="0 0 24 24"
         width="24">
@@ -72,7 +72,7 @@ include("./utils/db_conn.php");
         <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
       </svg>
       <label>Check out</label>
-      <input class="check-out" type="date" placeholder="Check Out" />
+      <input id="end_date" name="to_date" class="check-out" type="date" placeholder="Check Out" />
     </div>
 
     <select class="guests">
@@ -228,10 +228,16 @@ include("./utils/db_conn.php");
   </div>
   <script>
     $(document).ready(function () {
+      var t = new Date().toISOString().split('T')[0];
+      document.getElementsByName("from_date")[0].setAttribute('min', t);
+      document.getElementsByName("to_date")[0].setAttribute('min', t);
+
       $(".search-btn").click(function () {
         var city = $(".search-input").val() || $(".top-search").val();
         var guests = $('.guests').val();
-        
+        var start_date = $('#start_date').val();
+        var end_date = $('#end_date').val(); 
+
         if (!city) {
           alert('Please input city');
           return false;
@@ -239,6 +245,17 @@ include("./utils/db_conn.php");
         var string = `./results.php?city=${city}`;
         if (guests) {
           string += `&guests=${guests}`;
+        }
+
+        if (start_date && end_date && start_date === end_date) {
+          string += `&start_date=${start_date}`;
+        } else {
+          if (start_date) {
+          string += `&start_date=${start_date}`;
+          }
+          if (end_date) {
+            string += `&end_date=${end_date}`;
+          }
         }
         window.location = string;
       })

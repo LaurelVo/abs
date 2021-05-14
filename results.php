@@ -51,11 +51,30 @@ include("./utils/db_conn.php");
       <?php
         $city = $_GET['city'];
         $guests = $_GET['guests'];
+        $guests = $_GET['guests'];
+        $from = $_GET['start_date'];
+        $to = $_GET['end_date'];
 
-
+        $sql= '';
         $output = '';
-        $sql = 'SELECT * FROM accommodations WHERE city LIKE "%' .$city. '%"';
-        $result = mysqli_query($connect, $sql);  
+        if ($from == '' && $to == '') {
+          $sql = 'SELECT * FROM accommodations WHERE city LIKE "%' .$city. '%" AND max_guests >' . $guests;
+        } else {
+          if ($from == '') {
+            $sql = 'SELECT * FROM accommodations WHERE city LIKE "%' .$city. '%" AND max_guests >' . $guests . ' AND DATE_FORMAT("' . $to . '", "%Y-%l-%d") <= DATE_FORMAT(available_to, "%Y-%l-%d")';
+          }
+          if ($to == '') {
+            $sql = 'SELECT * FROM accommodations WHERE city LIKE "%' .$city. '%" AND max_guests >' . $guests . ' AND DATE_FORMAT("' . $from . '", "%Y-%l-%d") >= DATE_FORMAT(available_from, "%Y-%l-%d")';
+          }
+        }
+
+       
+
+        if ($from && $to) {
+          $sql = 'SELECT * FROM accommodations WHERE city LIKE "%' .$city. '%" AND max_guests >' . $guests . ' AND DATE_FORMAT("' . $from . '", "%Y-%l-%d") >= DATE_FORMAT(available_from, "%Y-%l-%d") AND DATE_FORMAT("' . $to . '", "%Y-%l-%d") <= DATE_FORMAT(available_to, "%Y-%l-%d")';
+        }
+        
+        $result = mysqli_query($connect, $sql);
 
         while($row = mysqli_fetch_array($result)) { 
           
