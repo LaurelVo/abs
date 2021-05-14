@@ -29,7 +29,7 @@ xampp version 7.1.15
 #xampp is used as the defult environment for this project. (Helps with SQL database)
 #install xampp before lunching this project.
 #after xampp installation copy and paste abs-master forder to (xampp/htdocs/)
-#after xampp installation copy and paste assugnment2_502.sql file to (xampp/phpMyAdmin/sql/)
+#after xampp installation import assugnment2_502.sql in phpMyAdmin
 
 Development tools used:
 -HTML 5 used for this project's static content.
