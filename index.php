@@ -30,7 +30,7 @@ include("./utils/db_conn.php");
     </svg>
 
     <form class="search-form">
-      <input type="text" placeholder="Where to? Enter a city" />
+      <input class="top-search" type="text" placeholder="Where to? Enter a city" />
     </form>
   </section>
 
@@ -76,25 +76,25 @@ include("./utils/db_conn.php");
     </div>
 
     <select class="guests">
-      <option>1 Guest</option>
-      <option>2 Guests</option>
-      <option>3 Guests</option>
-      <option>4 Guests</option>
-      <option>5 Guests</option>
-      <option>6 Guests</option>
-      <option>7 Guests</option>
-      <option>8 Guests</option>
-      <option>9 Guests</option>
-      <option>10 Guests</option>
-      <option>11 Guests</option>
-      <option>12 Guests</option>
-      <option>13 Guests</option>
-      <option>14 Guests</option>
-      <option>15 Guests</option>
-      <option>16+ Guests</option>
+      <option value="1">1 Guest</option>
+      <option value="2">2 Guests</option>
+      <option value="3">3 Guests</option>
+      <option value="4">4 Guests</option>
+      <option value="5">5 Guests</option>
+      <option value="6">6 Guests</option>
+      <option value="7">7 Guests</option>
+      <option value="8">8 Guests</option>
+      <option value="9">9 Guests</option>
+      <option value="10">10 Guests</option>
+      <option value="11">11 Guests</option>
+      <option value="12">12 Guests</option>
+      <option value="13">13 Guests</option>
+      <option value="14">14 Guests</option>
+      <option value="15">15 Guests</option>
+      <option value="16">16+ Guests</option>
     </select>
 
-    <button onclick="window.location = './results.html'" class="search-btn">
+    <button class="search-btn">
       Search
     </button>
   </section>
@@ -229,7 +229,18 @@ include("./utils/db_conn.php");
   <script>
     $(document).ready(function () {
       $(".search-btn").click(function () {
-        window.location = './results.php';
+        var city = $(".search-input").val() || $(".top-search").val();
+        var guests = $('.guests').val();
+        
+        if (!city) {
+          alert('Please input city');
+          return false;
+        }
+        var string = `./results.php?city=${city}`;
+        if (guests) {
+          string += `&guests=${guests}`;
+        }
+        window.location = string;
       })
       $("#login").click(function () {
         window.location = './signin.php';

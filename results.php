@@ -1,3 +1,10 @@
+<?php
+include("./utils/session.php");
+//include the file db_conn.php
+include("./utils/db_conn.php");
+
+?>
+
 <head>
   <link
     rel="stylesheet"
@@ -41,6 +48,30 @@
     <div class="prices row g-2">
       <h3>Search results</h3>
 
+      <?php
+        $city = $_GET['city'];
+        $guests = $_GET['guests'];
+
+
+        $output = '';
+        $sql = 'SELECT * FROM accommodations WHERE city LIKE "%' .$city. '%"';
+        $result = mysqli_query($connect, $sql);  
+
+        while($row = mysqli_fetch_array($result)) { 
+          
+          $output .= '<a href="single.php?id=' . $row['id'] . '" class="img col-4 accommodation">';
+            $output .= '<img src="' . $row['image_url'] . '" />';
+            $output .= '<div class="price-stamp">$AUD' . $row['price_per_night'] . '</div>';
+            $output .= '<div class="description">';
+              $output .= '<h4>' . $row['description'] . '</h4>';
+            $output .= '</div>';
+          $output .= '</a>';
+        }
+        echo $output;
+      ?>
+
+
+      <h3 style="margin-top: 50px;">Checkout other locations as well!</h3>
       <div class="img col-4">
         <img
           src="https://source.unsplash.com/featured/1200x900/?sculpture,hotel"
