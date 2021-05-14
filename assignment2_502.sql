@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 14, 2021 at 12:27 AM
+-- Generation Time: May 14, 2021 at 06:45 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.4.2
 
@@ -82,7 +82,8 @@ CREATE TABLE `bookings` (
 
 INSERT INTO `bookings` (`id`, `user_id`, `price`, `start_date`, `end_date`, `created_at`, `no_guests`, `is_accepted`, `rejected_reason`, `checkout_date`) VALUES
 (2, 1, '500', '2021-05-14', '2021-05-14', '2021-05-14', 1, 0, '', ''),
-(3, 1, '150', '2021-05-14', '2021-05-17', '2021-05-14', 1, 0, '', '');
+(3, 1, '150', '2021-05-14', '2021-05-17', '2021-05-14', 1, 0, '', ''),
+(4, 1, '150', '2021-05-14', '2021-05-16', '2021-05-14', 2, 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -188,7 +189,7 @@ ALTER TABLE `accommodations`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `messages`
