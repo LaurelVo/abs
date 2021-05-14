@@ -1,0 +1,68 @@
+﻿body {
+    background-color: white;
+}
+
+.topbar {
+    background-color: #38ACEC;
+    overflow: hidden;
+}
+
+    .topbar a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 20px 20px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+.fas {
+    float: right;
+    background-color: white;
+    padding: 20px 20px;
+    margin-right: 200px
+}
+
+h1 {
+    text-align: center
+}
+
+.welcome {
+    text-align: center;
+    border-spacing: 20px;
+    border-bottom: 1px solid #000000;
+}
+
+h4 {
+    text-align: center;
+}
+
+.overview {
+    margin-top: 40px;
+    font-size: 24px;
+}
+
+.edittable {
+    margin: 25px 0;
+    font-size: 20px;
+    border-bottom: 1px solid #000000;
+}
+
+.reviewmana {
+    margin-top: 40px;
+    font-size: 24px;
+}
+
+.review {
+    margin: 25px 0;
+    margin-bottom:10px;
+    font-size: 20px;
+    text-align:center;
+}
+
+.rating{
+    margin-top: 10px;
+    display:block;
+    text-align:center;
+    padding:20px;
+}
